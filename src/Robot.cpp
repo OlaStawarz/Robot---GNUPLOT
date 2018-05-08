@@ -20,5 +20,5 @@ void Robot::Obrot(const double Angle)
 
 void Robot::Ruch(const double Dlugosc)
 {
-  ZmienPolozenie(Dlugosc*cos(Kat),Dlugosc*sin(Kat));
+  ZmienPolozenie(Dlugosc*cos(Kat*STnaRAD),Dlugosc*sin(Kat*STnaRAD));
 }

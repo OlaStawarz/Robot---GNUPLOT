@@ -23,8 +23,8 @@ int main()
     char                  Znak;
     Scena scena;
     char wybor;
-    int kat;
- cout << "Nacisnij ENTER, aby kontynuowac" << endl;
+    int kat, droga;
+    /*cout << "Nacisnij ENTER, aby kontynuowac" << endl;
      cin >> noskipws >> Znak;
  
      //scena.ObrotRobotem(45);
@@ -39,27 +39,52 @@ int main()
 
      scena.ObrotRobotem(60);
      cout << "Nacisnij ENTER, aby kontynuowac" << endl;
-     cin >> noskipws >> Znak;
+     cin >> noskipws >> Znak;*/
 
-     cout << "Menu użytkownika" << endl;
-     cout << "o - obrot robota" << endl;
-     cout << "j - jazda na wprost" << endl;
-     cout << "w - wyswietl ponownie menu" << endl << endl;
-     cout << "k - zakoncz dzialanie programu" << endl;
+    do{
 
-     cout << "Twoj wybor (w - wyswietl menu)> ";
-     cin >> wybor;
-     
-     switch(wybor)
-       {
-       case 'o':
-	 {
-	   cout << "Podaj wartosc kata obrotu robota w stopniach" << endl;
-	   cout << "Kat obrotu: ";
-	   cin >> kat;
-	 }
-       }
-	 
+      cout << endl << "Menu użytkownika" << endl;
+      cout << "o - obrot robota" << endl;
+      cout << "j - jazda na wprost" << endl;
+      cout << "k - zakoncz dzialanie programu" << endl;
+      cout << "Twoj wybor> ";
+      cin >> wybor;
+      
+      switch(wybor)
+	{
+	case 'o':
+	  {
+	    cin.ignore(10000,'\n');
+	    cout << "Podaj wartosc kata obrotu robota w stopniach" << endl;
+	    cout << "Kat obrotu: ";
+	    cin >> kat;
+	    scena.ObrotRobotem(kat);
+	    cout << "Nacisnij ENTER, aby kontynuowac" << endl;
+	    cin >> noskipws >> Znak;
+	    cin >> noskipws >> Znak;
+	    break;
+	  }
+	case 'j':
+	  {
+	    cin.ignore(10000,'\n');
+	    cout << "Podaj dlugosc drogi ruchu robotem na wprost" << endl;
+	    cout << "Dlugosc drogi: ";
+	    cin >> droga;
+	    scena.RuchRobotem(droga);
+	    cout << "Nacisnij ENTER, aby kontynuowac" << endl;
+	    cin >> noskipws >> Znak;
+	    cin >> noskipws >> Znak;
+	   break;
+	  }
+	case 'k':
+	  {
+	    cout << "Koniec dzialania programu" << endl;
+	    Znak=0;
+	    break;
+	  }
+	}
+    }while(Znak==10);
+    
     /* PzG::LaczeDoGNUPlota  Lacze;  // Ta zmienna jest potrzebna do wizualizacji
                                 // rysunku prostokata
   ObiektGraficzny       Ob;

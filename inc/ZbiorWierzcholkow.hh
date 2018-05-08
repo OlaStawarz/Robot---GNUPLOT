@@ -6,10 +6,10 @@
 
 class ZbiorWierzcholkow : public std::vector<Wektor2D>{
 public:
-  /*const Wektor2D & operator [](const int Indeks) const
+  const Wektor2D & operator [](const int Indeks) const
   { return at(Indeks);}
   Wektor2D &  operator [] (const int Indeks)
-  {return at(Indeks); }*/
+  {return at(Indeks); }
   void Dodaj(const Wektor2D Punkt)
   {
     push_back(Punkt);
