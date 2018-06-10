@@ -9,9 +9,9 @@ __start__: ./robot_scena
 	./robot_scena
 
 ./robot_scena: obj obj/main.o obj/ObiektGraficzny.o\
-           obj/lacze_do_gnuplota.o obj/Robot.o obj/Scena.o
+           obj/lacze_do_gnuplota.o obj/Robot.o obj/Scena.o obj/Przeszkoda.o
 	g++ -Wall -pedantic -std=c++11 -o ./robot_scena obj/main.o\
-                        obj/lacze_do_gnuplota.o obj/ObiektGraficzny.o  obj/Robot.o obj/Scena.o
+                        obj/lacze_do_gnuplota.o obj/ObiektGraficzny.o  obj/Robot.o obj/Scena.o obj/Przeszkoda.o
 
 
 obj:
@@ -22,6 +22,9 @@ obj/Scena.o: inc/Scena.hh src/Scena.cpp
 
 obj/Robot.o: inc/Robot.hh src/Robot.cpp
 	g++ -c ${CXXFLAGS} -o obj/Robot.o src/Robot.cpp 
+
+obj/Przeszkoda.o: inc/Przeszkoda.hh src/Przeszkoda.cpp
+	g++ -c ${CXXFLAGS} -o obj/Przeszkoda.o src/Przeszkoda.cpp
 
 obj/lacze_do_gnuplota.o: inc/lacze_do_gnuplota.hh src/lacze_do_gnuplota.cpp 
 	g++ -c ${CXXFLAGS} -o obj/lacze_do_gnuplota.o src/lacze_do_gnuplota.cpp 
